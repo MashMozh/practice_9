@@ -1,0 +1,9 @@
+def count_stairs(n, max_block):
+    if n == 0:
+        return 1 
+    if n < 0 or max_block == 0:
+        return 0 
+    return count_stairs(n - max_block, max_block - 1) + count_stairs(n, max_block - 1)
+
+n = int(input("Введите количество кубиков: "))
+print(count_stairs(n, n - 1))
